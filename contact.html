@@ -254,6 +254,34 @@ https://templatemo.com/tm-556-catalog-z
         $(window).on("load", function() {
             $('body').addClass('loaded');
         });
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Evita que el formulario se envíe realmente
+
+        // Muestra el modal de éxito
+        $('#success-modal').modal('show');
+
+        // Opcional: Restablecer el formulario después de simular el envío
+        document.getElementById('contact-form').reset();
     </script>
 </body>
+    <!-- Modal para mostrar mensaje de éxito -->
+<div id="success-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="success-modal-label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="success-modal-label">Mensaje Enviado</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <p>Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.</p>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
 </html>
